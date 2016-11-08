@@ -1,0 +1,12 @@
+#ifndef LIBODSAR_GLOBAL_H
+#define LIBODSAR_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(LIBODSAR_LIBRARY)
+#  define LIBODSARSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define LIBODSARSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // LIBODSAR_GLOBAL_H
