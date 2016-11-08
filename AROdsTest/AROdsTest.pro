@@ -11,13 +11,25 @@ DEFINES += SRC_FILE_NAME=\\\"unamed_file\\\" # To make ods play nicely.
 
 TEMPLATE = app
 
-INCLUDEPATH += \
-  C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode \
-  C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode/QOds
+win32 {
+  INCLUDEPATH += \
+    C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode \
+    C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode/QOds
 
-LIBS += \
-  C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode/QOds/lib/libquazip.lib
+  LIBS += \
+    C:/Users/areeves/Documents/ResearchProjects/sphn/sharedCode/QOds/lib/libquazip.lib
+}
 
+!win32 {
+  INCLUDEPATH += \
+    ../../../sharedCode \
+    ../../../sharedCode/QOds
+    
+  LIBS += \
+    ../../../sharedCode/QOds/lib/libquazip.so    
+}
+
+    
 SOURCES += \
     main.cpp \
     ../ods/Book.cpp \

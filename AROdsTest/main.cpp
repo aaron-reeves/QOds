@@ -87,8 +87,8 @@ void Lesson18_ReadFile( const QString& path ) {
 
 
 // For testing ODS file parsing.
-int main() {
-  QString filename = "C:/Users/areeves/Documents/ResearchProjects/sphn/sampleDataFiles/Salmonella/abatdata/MILLERS - GRANTOWN ON SPEY - SALMONELLA MEAT JUICE SAMPLE COLLECTION SHEET.ods";
+int main( int argc, char *argv[] ) {
+  QString filename = argv[1];
 
   Lesson18_ReadFile( filename );
 
