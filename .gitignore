@@ -289,3 +289,8 @@
 /zlib/cmake_install.cmake
 /zlib/zlib.pc
 /zlib/zlib1rc.obj
+/AROdsTest/build
+/lib
+/libodsar/build
+/AROdsTest/*.user
+/libodsar/libodsar.pro.user
