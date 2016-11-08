@@ -27,7 +27,7 @@
 #include "Node.hpp"
 #include "Ns.hpp"
 #include "Tag.hpp"
-#include "tag.hh"
+#include "xtag.hh"
 #include <QSaveFile>
 
 static const auto kMetaInf = "META-INF";

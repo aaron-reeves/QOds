@@ -1,11 +1,11 @@
-#include "Date.hpp"
+#include "styleDate.hpp"
 
 #include "../Book.hpp"
 #include "../DateInfo.hpp"
 #include "../Ns.hpp"
-#include "Manager.hpp"
-#include "style.hxx"
-#include "tag.hh"
+#include "styleManager.hpp"
+#include "stylestyle.hxx"
+#include "styletag.hh"
 #include "../Tag.hpp"
 
 namespace ods	{ // ods::

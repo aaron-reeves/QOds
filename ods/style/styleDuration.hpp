@@ -1,48 +1,48 @@
-#ifndef ODS_STYLE_DATE_HPP_
-#define ODS_STYLE_DATE_HPP_
+#ifndef ODS_STYLE_DURATION_HPP_
+#define ODS_STYLE_DURATION_HPP_
 
 #include "../decl.hxx"
 #include "../err.hpp"
 #include "../i18n.hxx"
 #include "../ns.hxx"
 #include "../ods.hxx"
-#include "../tag.hxx"
+#include "../xtag.hxx"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::
 
-class ODS_API Date
+class ODS_API Duration
 {
 public:
-	Date(ods::Book*, const ods::StylePlace);
-	virtual ~Date();
+	Duration(ods::Book*, const ods::StylePlace);
+	virtual ~Duration();
 
 	void
-	AddDay();
+	AddHours();
 
 	void
-	AddMonth();
+	AddMinutes();
+
+	void
+	AddSeconds();
 
 	void
 	AddSeparator(const qint8 id);
 
-	void
-	AddYear();
-
-	const ods::DateInfo*
+	const ods::DurationInfo*
 	info() const { return info_; }
 
 	const QString&
 	name() const { return name_; }
 
 	void
-	SetInfo(const ods::DateInfo &info);
+	SetInfo(const ods::DurationInfo &info);
 
 	ods::Tag*
 	tag() const { return tag_; }
 
 private:
-	NO_ASSIGN_COPY_MOVE(Date);
+	NO_ASSIGN_COPY_MOVE(Duration);
 
 	ods::Tag*
 	GetTag(ods::tag::func f, const qint8 id_num = -1);
@@ -54,7 +54,7 @@ private:
 	SetUniqueName();
 
 	ods::Book			*book_ = nullptr;
-	ods::DateInfo		*info_ = nullptr;
+	ods::DurationInfo	*info_ = nullptr;
 	QString				name_;
 	ods::StylePlace		place_;
 	ods::Tag			*tag_ = nullptr;

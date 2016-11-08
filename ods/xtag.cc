@@ -20,10 +20,10 @@
  * OF THIS SOFTWARE.
  */
 
-#include "tag.hh"
+#include "xtag.hh"
 #include "Ns.hpp"
-#include "style/style.hxx"
-#include "style/tag.hh"
+#include "style/stylestyle.hxx"
+#include "style/styletag.hh"
 #include "Tag.hpp"
 
 namespace ods	{ // ods::

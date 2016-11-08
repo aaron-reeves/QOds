@@ -20,15 +20,15 @@
  * OF THIS SOFTWARE.
  */
 
-#include "Manager.hpp"
-#include "tag.hh"
+#include "styleManager.hpp"
+#include "styletag.hh"
 #include "../Book.hpp"
 #include "../filename.hxx"
 #include "../Node.hpp"
 #include "../Ns.hpp"
 #include "../Style.hpp"
-#include "style.hxx"
-#include "StyleFamily.hpp"
+#include "stylestyle.hxx"
+#include "styleStyleFamily.hpp"
 #include "../Tag.hpp"
 #include <QFile>
 #include <QSaveFile>

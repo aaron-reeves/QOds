@@ -224,16 +224,17 @@ TypeToString(const ods::Type &value_type)
 {
 	switch (value_type)
 	{
-	case ods::Type::Double: return ods::ns::kDouble;
-	case ods::Type::String: return ods::ns::kString;
-	case ods::Type::Currency: return ods::ns::kCurrency;
-	case ods::Type::Percentage: return ods::ns::kPercentage;
-	case ods::Type::Date: return ods::ns::kDate;
-	case ods::Type::Duration: return ods::ns::kTime;
-	case ods::Type::Bool: return ods::ns::kBool;
-	case ods::Type::NotSet: return "[Not set]";
-	return "[Other]";
+  case ods::Type::Double: return ods::ns::kDouble; break;
+  case ods::Type::String: return ods::ns::kString; break;
+  case ods::Type::Currency: return ods::ns::kCurrency; break;
+  case ods::Type::Percentage: return ods::ns::kPercentage; break;
+  case ods::Type::Date: return ods::ns::kDate; break;
+  case ods::Type::Duration: return ods::ns::kTime; break;
+  case ods::Type::Bool: return ods::ns::kBool; break;
+  case ods::Type::NotSet: return "[Not set]"; break;
+  default: return "[Other]"; break;
 	}
+  return "[Other]";
 }
 
 quint32

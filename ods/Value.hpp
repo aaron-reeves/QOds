@@ -31,6 +31,7 @@
 
 #include <QString>
 #include <QXmlStreamAttributes>
+#include <QVariant>
 
 namespace ods	{
 
@@ -110,16 +111,21 @@ public:
 	
 	void
 	ReadTextP(ods::Tag *tag);
+
+  QVariant
+  valueAsVariant() { return variant_; }
+
+  QString
+  valueAsString() { return attrValue_; }
 	
 	void
-	set(void *value) { DeleteData(); data_ = value; }
+  set(void *value);
 	
 	void
-	set(void *value, const ods::Type kType) {
-		DeleteData();
-		data_ = value;
-		type_ = kType;
-	}
+  set(void *value, const ods::Type kType);
+
+  void
+  setVariant();
 
 	void
 	SetCurrency(const double d);
@@ -152,10 +158,12 @@ public:
 	type_set(const ods::Type kType) { type_ = kType; }
 	
 private:
-	NO_ASSIGN_COPY_MOVE(Value);
+  NO_ASSIGN_COPY_MOVE(Value)
 	
 	void *data_ = nullptr;
 	ods::Type type_ = ods::Type::NotSet;
+  QVariant variant_;
+  QString attrValue_;
 };
 
 } // namespace ods

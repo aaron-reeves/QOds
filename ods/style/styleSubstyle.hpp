@@ -2,7 +2,7 @@
 #define ODS_STYLE_SUBSTYLE_HPP_
 
 #include "../err.hpp"
-#include "decl.hxx"
+#include "styledecl.hxx"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::

@@ -30,11 +30,11 @@
 #include "Sheet.hpp"
 #include "Style.hpp"
 #include "Tag.hpp"
-#include "tag.hh"
-#include "style/Percent.hpp"
-#include "style/style.hxx"
-#include "style/tag.hh"
-#include "style/StyleFamily.hpp"
+#include "xtag.hh"
+#include "style/stylePercent.hpp"
+#include "style/stylestyle.hxx"
+#include "style/styletag.hh"
+#include "style/styleStyleFamily.hpp"
 #include <QDebug>
 #include <QString>
 #include <QXmlStreamWriter>

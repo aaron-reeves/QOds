@@ -1,11 +1,11 @@
-#include "Duration.hpp"
+#include "styleDuration.hpp"
 
 #include "../Book.hpp"
 #include "../DurationInfo.hpp"
 #include "../Ns.hpp"
-#include "Manager.hpp"
-#include "style.hxx"
-#include "tag.hh"
+#include "styleManager.hpp"
+#include "stylestyle.hxx"
+#include "styletag.hh"
 #include "../Tag.hpp"
 
 namespace ods	{ // ods::

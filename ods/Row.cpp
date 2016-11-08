@@ -31,7 +31,7 @@
 #include "ods.hh"
 #include "Sheet.hpp"
 #include "Style.hpp"
-#include "style/style.hxx"
+#include "style/stylestyle.hxx"
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 

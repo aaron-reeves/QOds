@@ -34,8 +34,8 @@
 #include <ods/ods.hxx>
 #include <ods/Row.hpp>
 #include <ods/Sheet.hpp>
-#include <ods/style/Border.hpp>
-#include <ods/style/Currency.hpp>
+#include <ods/style/styleBorder.hpp>
+#include <ods/style/styleCurrency.hpp>
 #include <ods/Style.hpp>
 #include <ods/util.hh>
 #include <ods/Value.hpp> 

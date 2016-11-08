@@ -29,8 +29,8 @@
 #include "ods.hh"
 #include "Row.hpp"
 #include "Style.hpp"
-#include "style/style.hxx"
-#include "style/tag.hh"
+#include "style/stylestyle.hxx"
+#include "style/styletag.hh"
 #include <QDebug>
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>

@@ -29,8 +29,8 @@
 #include "global.hxx"
 #include "Node.hpp"
 #include "Prefix.hpp"
-#include "tag.hh"
-#include "tag.hxx"
+#include "xtag.hh"
+#include "xtag.hxx"
 #include <QVector>
 
 namespace ods	{ // ods::

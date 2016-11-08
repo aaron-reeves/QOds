@@ -25,12 +25,12 @@
 #include "global.hxx"
 #include "Content.hpp"
 #include "decl.hxx"
-#include "style/decl.hxx"
+#include "style/styledecl.hxx"
 #include "Duration.hpp"
 #include "err.hpp"
 #include "i18n.hxx"
 #include "ods.hh"
-#include "tag.hxx"
+#include "xtag.hxx"
 #include <QDateTime>
 #include <QString>
 #include <QTemporaryDir>

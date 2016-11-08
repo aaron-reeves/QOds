@@ -23,7 +23,7 @@
 #include "Column.hpp"
 #include "Ns.hpp"
 #include "Style.hpp"
-#include "style/style.hxx"
+#include "style/stylestyle.hxx"
 #include "Tag.hpp"
 
 namespace ods	{ // ods::

@@ -33,8 +33,8 @@
 #include "cell.hxx"
 #include "decl.hxx"
 #include "i18n.hxx"
-#include "tag.hh"
-#include "tag.hxx"
+#include "xtag.hh"
+#include "xtag.hxx"
 #include "Value.hpp"
 
 namespace ods	{ // ods::

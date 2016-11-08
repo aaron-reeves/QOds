@@ -20,8 +20,8 @@
  * OF THIS SOFTWARE.
  */
 
-#include "Border.hpp"
-#include "style.hxx"
+#include "styleBorder.hpp"
+#include "stylestyle.hxx"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::

@@ -24,7 +24,7 @@
 #ifndef ODS_GLOBAL_HXX_
 #define ODS_GLOBAL_HXX_
 
-#include <QtCore/QtGlobal>
+#include <QtCore>
 
 #ifdef ODS_SHARED
 	#if defined (ODS_BUILDING)
@@ -33,7 +33,7 @@
 		#define ODS_API Q_DECL_IMPORT
 	#endif
 #else
-	#define ODS_API 
+  #define ODS_API
 #endif
 
 #endif

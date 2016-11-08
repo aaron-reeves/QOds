@@ -30,12 +30,16 @@
 namespace ods	{
 
 Value::Value()
-{}
+{
+  // Do nothing
+}
 
 Value::Value(void *v, const ods::Type kType)
 {
 	data_ = v;
 	type_ = kType;
+
+  setVariant();
 }
 
 Value::~Value()
@@ -54,12 +58,19 @@ Value::AppendString(const QString &s)
 	}
 	QString *str = (QString*) data_;
 	*str += s;
+
+  variant_ = *str;
+  attrValue_ = *str;
 }
 
 void
 Value::CopyTo(ods::Value &v)
 {
 	v.type_set(type_);
+
+  v.attrValue_ = this->attrValue_;
+  v.variant_ = this->variant_;
+
 	if (IsNotSet())
 		return;
 	if (IsDouble())
@@ -93,6 +104,8 @@ Value::DeleteData()
 		delete AsDuration();
 	data_ = nullptr;
 	type_ = ods::Type::NotSet;
+  variant_ = QVariant();
+  attrValue_ = QString();
 }
 
 QString
@@ -106,7 +119,10 @@ void
 Value::Read(ods::Ns &ns, ods::Attrs &attrs)
 {
 	DeleteData();
+
 	auto *type_attr = attrs.Get(ns.office(), ods::ns::kValueType);
+  variant_ = QVariant();
+
 	if (type_attr == nullptr)
 	{ // shouldn't happen
 		type_ = ods::Type::NotSet;
@@ -129,8 +145,12 @@ Value::Read(ods::Ns &ns, ods::Attrs &attrs)
 			return;
 		}
 		set(new double(num), type_);
+    attrValue_ = QString( value_attr->value() );
+    variant_ = num;
 	} else if (IsString()) {
 		set(new QString(value_attr->value()), ods::Type::String);
+    attrValue_ = QString( value_attr->value() );
+    variant_ = value_attr->value();
 	} else if (IsDate()) {
 		auto *custom_attr = attrs.Get(ns.office(), ods::ns::kDateValue);
 		if (custom_attr == nullptr)
@@ -140,6 +160,8 @@ Value::Read(ods::Ns &ns, ods::Attrs &attrs)
 		}
 		auto dt = QDateTime::fromString(custom_attr->value(), Qt::ISODate);
 		set(new QDateTime(dt), type_);
+    attrValue_ = QString( custom_attr->value() );
+    variant_ = dt;
 	} else if (IsDuration()) {
 		auto *custom_attr = attrs.Get(ns.office(), ods::ns::kTimeValue);
 		if (custom_attr == nullptr)
@@ -150,8 +172,12 @@ Value::Read(ods::Ns &ns, ods::Attrs &attrs)
 		auto *t = new ods::Duration();
 		t->Decode(custom_attr->value());
 		set(t, type_);
+    attrValue_ = QString( custom_attr->value() );
+    qDebug() << "FIXME: Don't know yet how to handle duration as a variant";
 	} else {
 		type_ = ods::Type::NotSet;
+    attrValue_ = QString();
+    variant_ = QVariant();
 	}
 }
 
@@ -168,6 +194,36 @@ Value::ReadTextP(ods::Tag *tag)
 		SetString(*str);
 		return;
 	}
+}
+
+void
+Value::set(void *value) {
+  DeleteData();
+  data_ = value;
+}
+
+void
+Value::set(void *value, const ods::Type kType) {
+  DeleteData();
+  data_ = value;
+  type_ = kType;
+
+  setVariant();
+}
+
+void
+Value::setVariant() {
+  switch( type_ ) {
+    case ods::Type::Bool: variant_.setValue( *this->AsBool() ); break;
+    case ods::Type::Currency: variant_.setValue( *this->AsCurrency() ); break;
+    case ods::Type::Date: variant_.setValue( *this->AsDate() ); break;
+    case ods::Type::Double: variant_.setValue( *this->AsDouble() ); break;
+    case ods::Type::Percentage: variant_.setValue( *this->AsPercentage() ); break;
+    case ods::Type::Duration: qDebug() << "FIXME: I don't know how to handle durations"; variant_.setValue( QVariant() ); break;
+    case ods::Type::String: variant_.setValue( *this->AsString() ); break;
+    case ods::Type::NotSet: variant_.setValue( QVariant() ); break;
+    default: variant_.setValue( QVariant() ); break;
+  }
 }
 
 void
@@ -216,6 +272,8 @@ Value::SetString(const QString &s)
 	type_ = ods::Type::String;
 	data_ = new QString();
 	*AsString() = s;
+  variant_ = s;
+  attrValue_ = s;
 }
 
 QString

@@ -1,9 +1,9 @@
-#include "Substyle.hpp"
+#include "styleSubstyle.hpp"
 
-#include "Currency.hpp"
-#include "Date.hpp"
-#include "Duration.hpp"
-#include "Percent.hpp"
+#include "styleCurrency.hpp"
+#include "styleDate.hpp"
+#include "styleDuration.hpp"
+#include "stylePercent.hpp"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::

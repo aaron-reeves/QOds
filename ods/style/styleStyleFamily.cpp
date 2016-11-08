@@ -20,7 +20,7 @@
  * OF THIS SOFTWARE.
  */
 
-#include "StyleFamily.hpp"
+#include "styleStyleFamily.hpp"
 #include "../ns.hxx"
 
 namespace ods	{ // ods::

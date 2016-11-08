@@ -27,8 +27,8 @@
 #include "err.hpp"
 #include "global.hxx"
 #include "ods.hxx"
-#include "style/decl.hxx"
-#include "tag.hxx"
+#include "style/styledecl.hxx"
+#include "xtag.hxx"
 #include <QColor>
 
 namespace ods	{ // ods::

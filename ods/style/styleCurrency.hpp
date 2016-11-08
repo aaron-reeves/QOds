@@ -1,60 +1,51 @@
-#ifndef ODS_STYLE_DURATION_HPP_
-#define ODS_STYLE_DURATION_HPP_
+#ifndef ODS_STYLE_CURRENCY_HPP_
+#define ODS_STYLE_CURRENCY_HPP_
 
 #include "../decl.hxx"
 #include "../err.hpp"
 #include "../i18n.hxx"
 #include "../ns.hxx"
 #include "../ods.hxx"
-#include "../tag.hxx"
+#include "../xtag.hxx"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::
 
-class ODS_API Duration
+class ODS_API Currency
 {
 public:
-	Duration(ods::Book*, const ods::StylePlace);
-	virtual ~Duration();
+	Currency(ods::Book*, const ods::StylePlace);
+	virtual ~Currency();
 
-	void
-	AddHours();
-
-	void
-	AddMinutes();
-
-	void
-	AddSeconds();
-
-	void
-	AddSeparator(const qint8 id);
-
-	const ods::DurationInfo*
+	const ods::CurrencyInfo*
 	info() const { return info_; }
 
 	const QString&
 	name() const { return name_; }
 
 	void
-	SetInfo(const ods::DurationInfo &info);
+	SetInfo(const ods::CurrencyInfo &info);
 
 	ods::Tag*
 	tag() const { return tag_; }
 
 private:
-	NO_ASSIGN_COPY_MOVE(Duration);
+	NO_ASSIGN_COPY_MOVE(Currency);
 
 	ods::Tag*
-	GetTag(ods::tag::func f, const qint8 id_num = -1);
+	GetTag(ods::tag::func f);
 
 	void
 	Init();
 
 	void
+	SetDecimalPlaces(const qint8);
+
+	void
 	SetUniqueName();
 
 	ods::Book			*book_ = nullptr;
-	ods::DurationInfo	*info_ = nullptr;
+	ods::CurrencyInfo	*info_ = nullptr;
 	QString				name_;
 	ods::StylePlace		place_;
 	ods::Tag			*tag_ = nullptr;

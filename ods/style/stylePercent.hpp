@@ -5,7 +5,7 @@
 #include "../err.hpp"
 #include "../ns.hxx"
 #include "../ods.hxx"
-#include "../tag.hxx"
+#include "../xtag.hxx"
 
 namespace ods	{ // ods::
 namespace style	{ // ods::style::

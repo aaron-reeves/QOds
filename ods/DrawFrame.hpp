@@ -26,7 +26,7 @@
 #include "err.hpp"
 #include "global.hxx"
 #include "ods.hxx"
-#include "tag.hxx"
+#include "xtag.hxx"
 #include <QFile>
 #include <QPoint>
 #include <QSize>

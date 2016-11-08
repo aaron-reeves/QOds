@@ -20,11 +20,11 @@
  * OF THIS SOFTWARE.
  */
 
-#include "meta.hh"
+#include "xmeta.hh"
 #include "Ns.hpp"
-#include "style/style.hxx"
+#include "style/stylestyle.hxx"
 #include "Tag.hpp"
-#include "tag.hh"
+#include "xtag.hh"
 
 namespace ods	{ // ods::
 namespace meta	{ // ods::meta::

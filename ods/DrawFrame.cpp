@@ -28,7 +28,7 @@
 #include "ns.hxx"
 #include "Row.hpp"
 #include "Sheet.hpp"
-#include "style/style.hxx"
+#include "style/stylestyle.hxx"
 #include "util.hh"
 #include <QDir>
 #include <QImageReader>

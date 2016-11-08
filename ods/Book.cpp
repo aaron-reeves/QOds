@@ -33,15 +33,15 @@
 #include "Settings.hpp"
 #include "Sheet.hpp"
 #include "Style.hpp"
-#include "style/Currency.hpp"
-#include "style/Date.hpp"
-#include "style/Duration.hpp"
-#include "style/Manager.hpp"
-#include "style/Percent.hpp"
-#include "style/StyleFamily.hpp"
-#include "style/tag.hh"
+#include "style/styleCurrency.hpp"
+#include "style/styleDate.hpp"
+#include "style/styleDuration.hpp"
+#include "style/styleManager.hpp"
+#include "style/stylePercent.hpp"
+#include "style/styleStyleFamily.hpp"
+#include "style/styletag.hh"
 #include "Tag.hpp"
-#include "tag.hh"
+#include "xtag.hh"
 
 #include <QFile>
 #include <QXmlStreamWriter>

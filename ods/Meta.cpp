@@ -23,7 +23,7 @@
 #include "Meta.hpp"
 #include "Book.hpp"
 #include "filename.hxx"
-#include "meta.hh"
+#include "xmeta.hh"
 #include "Ns.hpp"
 #include "ods.hxx"
 #include "Tag.hpp"
