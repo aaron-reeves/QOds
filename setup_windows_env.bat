@@ -2,10 +2,10 @@
 echo Setting up the Window$ Qt environment...
 
 rem ==> MinGW
-set PATH=C:\Qt\Qt5.2.1\5.2.1\mingw48_32\bin;%PATH%
+set PATH=C:\Qt\5.7\mingw53_32\bin;%PATH%
 rem set PATH=C:\Qt\Qt5.4.0\Tools\mingw491_32\bin;%PATH%
 	rem Dir with make.exe:
-set PATH=C:\Qt\Qt5.2.1\Tools\mingw48_32\bin;%PATH%
+set PATH=C:\Qt\5.7\Tools\mingw53_32\bin;%PATH%
 	rem Dir with cmake.exe:
 set PATH=C:\Program Files (x86)\CMake\bin;%PATH%
 rem <== MinGW
